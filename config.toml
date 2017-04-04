@@ -1,0 +1,9 @@
+languageCode = "en-us"
+title = "roobr3: carrier lost"
+baseURL = "http://www.carrierlost.net/"
+
+theme = "after-dark"
+
+[params]
+  description = "Netsec and stuff" # Suggested, controls default description meta
+  author = "Roberto \"Roobre\" Santalla (@rsroobre)" # Optional, controls author name display on posts
