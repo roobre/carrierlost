@@ -2,11 +2,18 @@ languageCode = "en-us"
 title = "roobr3: carrier lost"
 baseURL = "https://www.carrierlost.net/"
 
-theme = "after-dark"
+theme = "terminal"
 
 [params]
   description = "Netsec and stuff" # Suggested, controls default description meta
   author = "Roberto \"Roobre\" Santalla (@rsroobre)" # Optional, controls author name display on posts
+  contentTypeName = "post"
+  fullWidthTheme = false
+  centerTheme = true
+  themeColor = "green"
+
+[params.logo]
+  logoText = "roobr3: carrier lost"
 
 [author]
     name = "Roberto \"Roobre\" Santalla (@rsroobre)"
@@ -20,7 +27,7 @@ SectionPagesMenu = "main"
   identifier = "home"
   url = "/"
 [[menu.main]]
-  name = "About me"
+  name = "About me @ Keybase"
   weight = 9
   identifier = "aboutme"
   url = "https://keybase.io/roobre"
