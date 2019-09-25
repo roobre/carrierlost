@@ -111,11 +111,11 @@ I have tested this using the [Shadow of the Tomb Raider](https://steamcommunity.
 
 No interrupt masking:
 
-![Figure: Frame times and FPS with uncontrolled interrupt mapping](/img/vfio/time-unmasked.svgz)
+[![Figure: Frame times and FPS with uncontrolled interrupt mapping](/img/vfio/time-unmasked.png)](/img/vfio/time-unmasked.svg)
 
 Interrupt masking:
 
-![Figure: Frame times and FPS with controlled interrupt mapping](/img/vfio/time-masked.svgz)
+[![Figure: Frame times and FPS with controlled interrupt mapping](/img/vfio/time-masked.png)](/img/vfio/time-masked.svg)
 
 As for the overall performance:
 
