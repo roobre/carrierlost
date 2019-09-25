@@ -42,7 +42,9 @@ The whole XML confguration for my VM can be found [here](https://gist.github.com
 
 ### Note on the number of cores
 
-A few months ago, I was using an i5-6600k for virtualization instead. I do not recommend this, under any circumstance: Most modern games need at least 4 cores to perform decently, so if you have less than 8 cores, you will have little success with vfio, either with the tricks explained here or likely anywhere else.
+A few months ago, I was using an i5-6600k for virtualization instead of the 9900k. I do not recommend this, under any circumstance: Most modern games need at least 4 cores to perform decently, so if you have less than 8 cores, you will have little success with vfio, either with the tricks explained here or likely anywhere else.
+
+Wether to prefer SMT or not (for example, if 4c2t is better than 6c for gaming) is a question for which I still do not have an answer, and will likely depend a lot on the particular workload (game). If you can afford it, go for the biggest thing and call it a day.
 
 The main reason for this is that your host still needs to do a lot of stuff while you are running the VM. If you don't reserve enough cores for it, your virtual machine will be preempted out by the linux scheduler, causing huge latency spikes both due to the scheduling itself, and by the hosts tasks evicting their data from the L1 and L2 caches.
 
@@ -54,7 +56,7 @@ As I have mentioned before, I will not cover the basic setup of the VM here. You
 
  I'm currently mapping 12 of the 16 logical cores my CPU has to the VM, and this ratio is working nicely so far. Just take into account the following:
 
-* `lstopo`: Check your CPU topology, and assign cores with some common sense. Keep multiple threads of the same physical CPU to either the host or the guest. If some of your cores share L2 or L3 caches, try to respect that assignment too, so the same cache is not accessed by both. Failure to do this will cause evictions and poor locality.
+* `lstopo`: Check your CPU topology, and assign cores with some common sense. Keep multiple threads of the same physical CPU to either the host or the guest. If some of your cores share L2 or L3 caches, try to respect that assignment too, so the same cache is not accessed by both. Failure to do this will likely cause latency spikes, since the host will likely evict the guest's data from those caches.
 
 ![`lstopo`](/img/vfio/lstopo.svg)
 <center>*Output of `lstopo` for my machine*</center>
