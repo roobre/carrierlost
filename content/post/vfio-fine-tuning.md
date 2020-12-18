@@ -52,9 +52,7 @@ The main reason for this is that your host still needs to do a lot of stuff whil
 
 As I have mentioned before, I will not cover the basic setup of the VM here. You can check the [Archlinux wiki page about VFIO](https://wiki.archlinux.org/index.php/PCI_passthrough_via_OVMF) for that, or one of the multiple guides you'll find on [r/vfio](https://reddit.com/r/vfio) or [Level1Techs](https://forum.level1techs.com/c/software/vfio). However I will list what I currently have just for reference:
 
-### [CPU Pinning](https://wiki.archlinux.org/index.php/PCI_passthrough_via_OVMF#CPU_pinning)
-
- I'm currently mapping 12 of the 16 logical cores my CPU has to the VM, and this ratio is working nicely so far. Just take into account the following:
+* [CPU Pinning](https://wiki.archlinux.org/index.php/PCI_passthrough_via_OVMF#CPU_pinning): I'm currently mapping 12 of the 16 logical cores my CPU has to the VM, and this ratio is working nicely so far. Just take into account the following:
 
 * `lstopo`: Check your CPU topology, and assign cores with some common sense. Keep multiple threads of the same physical CPU to either the host or the guest. If some of your cores share L2 or L3 caches, try to respect that assignment too, so the same cache is not accessed by both. Failure to do this will likely cause latency spikes, since the host will likely evict the guest's data from those caches.
 
@@ -63,9 +61,7 @@ As I have mentioned before, I will not cover the basic setup of the VM here. You
 
 * [emulatorpin](https://gist.github.com/roobre/8f2d86a51a6b619a6622a64a58f9fc94#file-winvirtexpress-xml-L38): Reserve some threads for the emulator (qemu) to run io on them without penalizing the guest.
 
-### [SCREAM](https://github.com/duncanthrax/scream/)
-
-The best solution for audio I know at the time of writing is SCREAM. It's easy to configure, following the author's documentation on their [github page](https://github.com/duncanthrax/scream/).
+* [SCREAM](https://github.com/duncanthrax/scream/): The best solution for audio I know at the time of writing is SCREAM. It's easy to configure, following the author's documentation on their [github page](https://github.com/duncanthrax/scream/).
 
 
 ## Interrupt masking
