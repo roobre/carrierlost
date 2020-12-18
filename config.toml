@@ -12,12 +12,19 @@ theme = "terminal"
   centerTheme = true
   themeColor = "green"
 
+[params.twitter]
+  # set Twitter handles for Twitter cards
+  # see https://developer.twitter.com/en/docs/tweets/optimize-with-cards/guides/getting-started#card-and-content-attribution
+  # do not include @
+  creator = "rsroobre"
+  site = "https://github.com/roobre"
+
 [params.logo]
   logoText = "roobr3: carrier lost"
 
 [author]
-    name = "Roberto \"Roobre\" Santalla (@rsroobre)"
-    email = "roobre (@t) roobre d0t es"
+  name = "Roberto \"Roobre\" Santalla (@rsroobre)"
+  email = "roobre (@t) roobre d0t es"
 
 SectionPagesMenu = "main"
 
