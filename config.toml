@@ -1,6 +1,6 @@
 languageCode = "en-us"
 title = "roobr3: carrier lost"
-baseURL = "https://www.carrierlost.net/"
+baseURL = "https://carrierlost.roobre.es/"
 
 theme = "terminal"
 
